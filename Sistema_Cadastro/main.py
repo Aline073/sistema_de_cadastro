@@ -1,5 +1,5 @@
 from db import conectar, criar_banco_e_tabela
-from app import AppCadastro
+from app import appCadastro
 if __name__ == '__main__':
     try:
         c = conectar(usar_banco=False)
@@ -7,5 +7,5 @@ if __name__ == '__main__':
         c.close()
     except Exception:
         pass
-    app = AppCadastro()
+    app = appCadastro()
     app.mainloop()

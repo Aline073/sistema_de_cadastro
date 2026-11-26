@@ -116,3 +116,4 @@ Visual Studio Code #
 !.vscode/launch.json
 !.vscode/extensio
 .history
+config.py

@@ -65,7 +65,7 @@ def aplicar_estilo(root: tk.Tk):
 # alternando as cores das linhas (uma linha clara e outra um escura, facilitando a leitura)
 
 
-def aplicar_zebra_Treeview(tree: ttk.Treeview):
+def aplicar_zebra_treeview(tree: ttk.Treeview):
 
     # Configura as propriedades visuais (cor de fundo) da tag “oddrow”.
     # Essa tag será atribuída às linhas ímpares.
@@ -85,7 +85,7 @@ def aplicar_zebra_Treeview(tree: ttk.Treeview):
 # Essa função tem como objetivo limpar a tabela atual e, em seguida, preencher novamente
 
 
-def preencher_treeview(tree: ttk.Treeview, rows):
+def preencher_treeview_com_zebra(tree: ttk.Treeview, rows):
 
     # O método get_children() retorna uma lista com todos os identificadores (IDs)
     # das linhas atualmente exibidas na Treeview.

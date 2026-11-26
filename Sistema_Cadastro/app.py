@@ -30,7 +30,7 @@ def validar(nome: str, email: str, telefone: str):
     return True, ""
 
 
-class appCadastro(tk.TK):
+class appCadastro(tk.Tk):
 
     def __init__(self):
 
