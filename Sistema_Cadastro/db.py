@@ -205,7 +205,7 @@ def criar_banco_e_tabela(conn):
 
         cur.execute(
 
-            f"CREATE TABLE IF NOT EXISTS {NOME_BANCO}"
+            f"CREATE DATABASE IF NOT EXISTS {NOME_BANCO}"
             "DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;"
         )
 
@@ -226,19 +226,18 @@ def criar_banco_e_tabela(conn):
         cur.execute(
             f"""
             CREATE TABLE IF NOT EXISTS {NOME_TABELA}(
-                id INT AUTO_INCREMENT PRIMAY KEY, 
-                nome_VARCHAR(120) NOT NULL,
-                email_VARCHAR(150) NOT NULL,
-                telefone_VARCHAR(30) NOT NULL,                                               
-                criado_em_TIMESTAMP_DEFAULT_CURRENT_TIMESTAMP 
-                   )   ENGINE=innoDB DEFAULT CHARACTER=utf8mb4;
+                id INT AUTO_INCREMENT PRIMARY KEY, 
+                nome VARCHAR(120) NOT NULL,
+                email VARCHAR(150) NOT NULL,
+                telefone VARCHAR(30) NOT NULL,                                               
+                criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
             """
-            # - “DEFAULT CURRENT_TIMESTAMP” faz com que o MySQL insira automaticamente a data e hora
-            # no momento em que o registro é criado.
-            # Assim, o sistema sempre saberá quando cada cadastro foi feito.
-
-            # ENGINE=InnoDB
-            # - “ENGINE” indica o tipo de mecanismo de armazenamento usado pelo MySQL.
-            # - “InnoDB” é o mais moderno e seguro, suportando transações e chaves estrangeiras
-
         )
+        # - “DEFAULT CURRENT_TIMESTAMP” faz com que o MySQL insira automaticamente a data e hora
+        # no momento em que o registro é criado.
+        # Assim, o sistema sempre saberá quando cada cadastro foi feito.
+
+        # ENGINE=InnoDB
+        # - “ENGINE” indica o tipo de mecanismo de armazenamento usado pelo MySQL.
+        # - “InnoDB” é o mais moderno e seguro, suportando transações e chaves estrangeiras
